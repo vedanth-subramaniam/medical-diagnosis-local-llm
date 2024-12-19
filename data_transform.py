@@ -11,7 +11,7 @@ def create_jsonl(df: pd.DataFrame, type='train'):
     for _, row in df.iterrows():
         diagnosis = row['label']
         symptoms = row['text']
-        prompt = f"You are a medical diagnosis expert. You will give patient symptoms: '{symptoms}'. Question: 'What is the diagnosis I have?'. Response: You may be diagnosed with {diagnosis}."
+        prompt = f"You are a medical diagnosis expert. You will given patient symptoms: '{symptoms}'. Question: 'What is the diagnosis I have?'. Response: You may be diagnosed with {diagnosis}."
         jsonl_data.append({"text": prompt})
     
     with open(f'data/{type}.jsonl', 'w') as file:
